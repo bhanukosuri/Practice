@@ -413,6 +413,21 @@ function onSubmit(e) {
 
     localStorage.setItem(nameInput.value, emailInput.value);
 
+    temp = localStorage.getItem('bhanu');
+
+    let myObj = {
+      name: nameInput.value,
+      email: emailInput.value,
+    };
+
+    let myObj_serialized = JSON.stringify(myObj);
+
+    localStorage.setItem('myObj', myObj_serialized);
+
+    let myObj_deserialized = JSON.parse(localStorage.getItem('myObj'));
+
+    console.log(myObj_deserialized);
+
     //Clear Fields
     nameInput.value = '';
     emailInput.value = '';
